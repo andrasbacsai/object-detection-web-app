@@ -9,6 +9,14 @@ services:
       - backend
     volumes:
       - ./storage:/storage
+  frontend:
+    build: frontend
+    ports:
+      - 8501:8501
+    depends_on:
+      - backend
+    volumes:
+      - ./storage:/storage
   backend:
     build: backend
     ports:
